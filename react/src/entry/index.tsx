@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.less";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.svg"
 
 function App() {
   return (

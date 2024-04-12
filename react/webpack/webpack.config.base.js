@@ -36,7 +36,7 @@ const baseConfig = {
             {
                 test: /\.less$/,
                 // use: ["style-loader", "css-loader", "less-loader"], // MiniCssExtractPlugin插件和style-loader冲突，所以这里用MiniCssExtractPlugin插件替换了style-loader
-                use: [MiniCssExtractPlugin.loader, "css-loader", "less-loader"], // MiniCssExtractPlugin插件和style-loader冲突，所以这里用MiniCssExtractPlugin插件替换了style-loader
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader","less-loader"], // MiniCssExtractPlugin插件和style-loader冲突，所以这里用MiniCssExtractPlugin插件替换了style-loader
             },
             // 对图片的处理
             {
@@ -61,7 +61,7 @@ const baseConfig = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: "webpack-demo",
-            template: path.resolve(__dirname, "../src/template/index.html"),
+            template: path.resolve(__dirname, "../template/index.html"),
             filename: "index.html", // 生成的html的文件名，模版文件中无需插入任何js，webpack会自动插入
             inject: "body", // 'body' | 'head',可以控制js插入<head>还是<body>，如果没有默认插入<head>
         }),

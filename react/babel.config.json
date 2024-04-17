@@ -1,3 +1,8 @@
 {
-    "presets": ["@babel/preset-react", "@babel/preset-env"]
+    // 执行顺序由右往左,所以先处理react,再处理ts,再处理jsx,最后转换为低版本语法
+    "presets": [["@babel/preset-env", {
+        "modules": false, // 参数false，不会对ES6模块化进行更改，还是使用import引入模块。使用ES6模块化语法有什么好处呢。在使用Webpack一类的打包工具，可以进行静态分析，从而可以做tree shaking 等优化措施。
+        "corejs": "3", // 指定core.js的版本
+        "useBuiltIns": "usage" // 使用corejs的方式 “usage” 表示按需加载
+    }], ["@babel/preset-typescript"], ["@babel/preset-react"],],
 }

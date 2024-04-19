@@ -13,15 +13,15 @@
         "plugin:import/typescript",
         "prettier"
     ],
-    "parser": "@typescript-eslint/parser", // 使用@typescript-eslint/parser这个解析器进行语法解析
+    "parser": "@typescript-eslint/parser", // 解析器，使用@typescript-eslint/parser这个解析器进行语法解析
     "parserOptions": { // 解析器更详细的配置
-        "ecmaFeatures": {
+        "sourceType": "module", // 支持的模块化标准
+        "ecmaVersion": "latest", // 支持最新版的ECMAScript标准，默认为5
+        "ecmaFeatures": { 
             "jsx": true
         },
-        "ecmaVersion": "latest", // 支持最新版的es标准
-        "sourceType": "module" // 支持的模块化标准
     },
-    "plugins": [
+    "plugins": [ // 插件，向ESLint添加各种扩展，可以定义规则，环境或配置的第三方模块
         "@typescript-eslint",
         "react-hooks",
         "react",
@@ -47,9 +47,10 @@
         "@typescript-eslint/no-shadow": ["error"],
         "react-refresh/only-export-components": "warn"
     },
-    "global": {
-        // 声明 jQuery 对象为全局变量
-        "$": false, // true表示该变量为 writeable，而 false 表示 readonly, 即不可重写$
+    "global": { // 全局变量
+        // false、readable、readonly 这 3 个是等价的，表示变量只可读不可写；
+        // true、writeable、writable 这 3 个是等价的，表示变量可读可写；
+        "$": false,
         "jQuery": false,
         "Promise": "off" // 禁用Promise
     }

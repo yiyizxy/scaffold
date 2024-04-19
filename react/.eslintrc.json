@@ -1,9 +1,10 @@
 {
-    "env": {
+	// "root": true, // 若项目中有多个子项目，且每个项目都会有.eslintrc，子项目会一直向上查找所有的.eslintrc，直到找到root:true的eslintrc，再将所有的.eslintrc合并
+    "env": { // 对环境定义的一组全局变量的预设
         "browser": true,
         "es2021": true
     },
-    "extends": [
+    "extends": [ // 继承另一个配置文件的所有特性
         "standard",
         "eslint:recommended",
         "plugin:react/recommended",
@@ -12,20 +13,20 @@
         "plugin:import/typescript",
         "prettier"
     ],
-    "parser": "@typescript-eslint/parser",
+    "parser": "@typescript-eslint/parser", // 使用@typescript-eslint/parser这个解析器进行语法解析
+    "parserOptions": { // 解析器更详细的配置
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest", // 支持最新版的es标准
+        "sourceType": "module" // 支持的模块化标准
+    },
     "plugins": [
         "@typescript-eslint",
         "react-hooks",
         "react",
         "prettier"
     ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
     "rules": {
         "max-len": [
             "warn",
@@ -45,5 +46,11 @@
         "no-shadow": "off",
         "@typescript-eslint/no-shadow": ["error"],
         "react-refresh/only-export-components": "warn"
+    },
+    "global": {
+        // 声明 jQuery 对象为全局变量
+        "$": false, // true表示该变量为 writeable，而 false 表示 readonly, 即不可重写$
+        "jQuery": false,
+        "Promise": "off" // 禁用Promise
     }
 }

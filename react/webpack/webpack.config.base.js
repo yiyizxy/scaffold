@@ -19,7 +19,7 @@ const baseConfig = {
     module: {
         rules: [
             {
-                test: /\.(tsx|js|jsx)$/,
+                test: /\.(ts|tsx|js|jsx)$/,
                 exclude: /node_modules/,
                 use: "babel-loader",
                 // use: [
@@ -65,6 +65,9 @@ const baseConfig = {
                 // },
                 // file-loader ：不仅仅可以处理图片资源，本质是处理文件导入地址并替换成其访问地址，并把文件输出到相应位置，音视频等资源也可以使用它。
                 // url-loader：file-loader的升级版，包含 file-loader 的全部功能，并且能够根据配置将符合配置的文件转换成 Base64 方式引入，将小体积的图片 Base64 引入项目可以减少 http 请求，也是一个前端常用的优化方式。
+                generator: {
+                    filename: 'assets/imgs/[name].[hash:8][ext]',
+                },
             },
             {
                 test: /\.ico$/i,

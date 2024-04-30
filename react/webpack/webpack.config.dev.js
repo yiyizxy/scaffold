@@ -1,4 +1,5 @@
 const { merge } = require("webpack-merge")
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 
 const { baseConfig } = require("./webpack.config.base")
 module.exports = merge(baseConfig, {
@@ -11,4 +12,7 @@ module.exports = merge(baseConfig, {
         port: 8000,
         hot: true,
     },
+    plugins: [
+        // new FriendlyErrorsWebpackPlugin() // 错误提示插件
+    ]
 })

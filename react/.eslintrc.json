@@ -2,7 +2,9 @@
 	// "root": true, // 若项目中有多个子项目，且每个项目都会有.eslintrc，子项目会一直向上查找所有的.eslintrc，直到找到root:true的eslintrc，再将所有的.eslintrc合并
     "env": { // 对环境定义的一组全局变量的预设
         "browser": true,
-        "es2021": true
+        "node": true,
+        "es6": true,
+        "jest": true
     },
     "extends": [ // 继承另一个配置文件的所有特性
         "standard",
@@ -10,7 +12,7 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended",
-        "plugin:import/typescript",
+        "plugin:import/typescriptx",
         "prettier"
     ],
     "parser": "@typescript-eslint/parser", // 解析器，使用@typescript-eslint/parser这个解析器进行语法解析
@@ -19,7 +21,7 @@
         "ecmaVersion": "latest", // 支持最新版的ECMAScript标准，默认为5
         "ecmaFeatures": { 
             "jsx": true
-        },
+        }
     },
     "plugins": [ // 插件，向ESLint添加各种扩展，可以定义规则，环境或配置的第三方模块
         "@typescript-eslint",
@@ -27,27 +29,27 @@
         "react",
         "prettier"
     ],
-    "rules": {
-        "max-len": [
-            "warn",
-            {
-                "code": 120
-            }
-        ],
-        "@typescript-eslint/no-unused-vars": "error",
-        "no-bitwise": [
-            "error",
-            {
-                "allow": ["~"]
-            }
-        ],
-        "semi": ["error", "never"],
-        "comma-dangle": ["error", "never"],
-        "no-shadow": "off",
-        "@typescript-eslint/no-shadow": ["error"],
-        "react-refresh/only-export-components": "warn"
-    },
-    "global": { // 全局变量
+    // "rules": {
+    //     "max-len": [
+    //         "warn",
+    //         {
+    //             "code": 120
+    //         }
+    //     ],
+    //     "@typescript-eslint/no-unused-vars": "error",
+    //     "no-bitwise": [
+    //         "error",
+    //         {
+    //             "allow": ["~"]
+    //         }
+    //     ],
+    //     "semi": ["error", "never"],
+    //     "comma-dangle": ["error", "never"],
+    //     "no-shadow": "off",
+    //     "@typescript-eslint/no-shadow": ["error"],
+    //     "react-refresh/only-export-components": "warn"
+    // },
+    "globals": { // 全局变量
         // false、readable、readonly 这 3 个是等价的，表示变量只可读不可写；
         // true、writeable、writable 这 3 个是等价的，表示变量可读可写；
         "$": false,

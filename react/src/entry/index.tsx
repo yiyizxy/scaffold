@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { add } from "../utils/index"
+import { add } from "../utils/index";
 import "./index.less";
-import logo from "../assets/images/logo.svg"
+import logo from "../assets/images/logo.svg";
 
 function App() {
-  const value = add(4, 5)
+  const value = add(4, 5);
   return (
     <div className="App">
       <header className="App-header">
@@ -21,4 +21,4 @@ function App() {
 
 // Reat18新方法
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />)
+root.render(<App />);

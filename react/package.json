@@ -8,6 +8,7 @@
     "build": "webpack --config ./webpack/webpack.config.dev.js",
     "build:prod": "webpack --config ./webpack/webpack.config.prod.js",
     "server": "webpack-dev-server --config ./webpack/webpack.config.dev.js",
+    "analyze": "webpack-dev-server --config ./webpack/webpack.config.dev.js",
     "clean": "eslint --clear-cache"
   },
   "author": "zhuxiaoying",
@@ -44,6 +45,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-webpack-plugin": "^4.1.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^5.6.0",
     "less": "^4.2.0",
     "less-loader": "^8.1.1",
@@ -56,6 +58,7 @@
     "typescript": "^5.4.5",
     "url-loader": "^4.1.1",
     "webpack": "^5.70.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4",
     "webpack-merge": "^5.10.0"

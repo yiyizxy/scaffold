@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { add } from "../utils/index";
 import "./index.less";
 import logo from "../assets/images/logo.svg";
+import render from '../libs/createRender';
 
 function App() {
   const value = add(4, 5);
@@ -17,8 +18,10 @@ function App() {
   );
 }
 
-// ReactDOM.render(<App />, document.getElementById("root"));
+// // Reat18新方法
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<App />);
 
-// Reat18新方法
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+// import Demo from '../containers/index/index';
+
+render(<App />);

@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { add } from "../utils/index";
 import "./index.less";
 import logo from "../assets/images/logo.svg";
